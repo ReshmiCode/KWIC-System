@@ -7,8 +7,15 @@ public class Main {
         List<String> inputLines = input.getInput();
         System.out.println("Your input was: " + inputLines);
 
-        AlphabeticShift alphaShift = new AlphabeticShift(inputLines);
+        CircularShift circularShift = new CircularShift(inputLines);
+        List<String> circularlyShiftedLines = circularShift.circularShift();
+        System.out.println("Circularly shifted lines lines are: " + circularlyShiftedLines);
+
+
+        AlphabeticShift alphaShift = new AlphabeticShift(circularlyShiftedLines);
         List<String> alphaSortedLines = alphaShift.alphabetize();
         System.out.println("Final lines are: " + alphaSortedLines);
+
+
     }
 }
