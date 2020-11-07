@@ -8,4 +8,6 @@ public class URL {
     }
 
     public String getDesc() { return desc; }
+
+    public String toString() { return desc + "\t" + url; }
 }
