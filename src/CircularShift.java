@@ -13,12 +13,14 @@ public class CircularShift {
     public List<String> circularShift() {
         List<String> circularList = new ArrayList<>();
 
-        for (int inputlength = 0; inputlength < lines.size(); inputlength++ ) {
+        for (int inputlength = 0; inputlength < lines.size(); inputlength++) {
             String[] words = lines.get(inputlength).split(DELIMITER);
             circularList.add(lines.get(inputlength));
-
             for (int i = 1; i < words.length; i++) {
-                circularList.add(getShiftedLine(i, words));
+                String shiftedLine = getShiftedLine(i, words);
+                if(!(shiftedLine.startsWith("a") || shiftedLine.startsWith("the") || shiftedLine.startsWith("of"))) {
+                    circularList.add(shiftedLine);
+                }
             }
         }
         return circularList;
